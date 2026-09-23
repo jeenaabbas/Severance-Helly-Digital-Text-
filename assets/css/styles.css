@@ -1,1 +1,408 @@
+/* =========================
+   GENERAL
+========================= */
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f1f0ea;
+    color: #171817;
+    font-family: "Inter", sans-serif;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(241, 240, 234, 0.92),
+            rgba(241, 240, 234, 0.96)
+        ),
+        url("../img/conference-room.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    transition: opacity 1s ease;
+}
+
+.intro-content {
+    max-width: 700px;
+    padding: 40px;
+}
+
+.eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: #68756a;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 0.85;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+}
+
+.intro-text {
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #68756a;
+}
+
+.begin-button {
+    margin-top: 35px;
+    padding: 13px 30px;
+
+    border: 1px solid #465247;
+    background: transparent;
+    color: #465247;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.begin-button:hover {
+    background: #465247;
+    color: #f1f0ea;
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.story {
+    display: none;
+}
+
+.story.visible {
+    display: block;
+}
+
+.scene {
+    min-height: 100vh;
+    padding: 100px 8vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-bottom: 1px solid rgba(70, 82, 71, 0.15);
+
+    transition:
+        background 1s ease,
+        color 1s ease;
+}
+
+.scene-number {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    color: #68756a;
+    margin-bottom: 50px;
+}
+
+.story-content {
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+/* =========================
+   TEXT TYPES
+========================= */
+
+.description {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    max-width: 620px;
+}
+
+.spoken,
+.voice {
+    margin: 40px 0;
+    padding-left: 25px;
+
+    font-size: 1.2rem;
+}
+
+.spoken.helly {
+    border-left: 3px solid #171817;
+}
+
+.voice {
+    border-left: 3px solid #68756a;
+    color: #465247;
+}
+
+.speaker-label {
+    display: block;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+
+    margin-bottom: 8px;
+}
+
+.thought {
+    margin: 35px 0;
+
+    color: #68756a;
+
+    font-family: "DM Serif Display", serif;
+    font-size: 1.4rem;
+    font-style: italic;
+
+    max-width: 600px;
+}
+
+.thought-mark {
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    margin-right: 8px;
+    color: #a6a7a1;
+}
+
+.panic {
+    color: #465247;
+}
+
+
+/* =========================
+   INTERACTIVE WORDS
+========================= */
+
+.interactive-word {
+    display: inline-block;
+
+    margin: 35px 0 15px;
+
+    border: none;
+    border-bottom: 2px dotted #68756a;
+
+    background: transparent;
+
+    color: #465247;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.interactive-word:hover,
+.interactive-word:focus {
+    color: #171817;
+    border-color: #171817;
+}
+
+.hidden-thought {
+    display: none;
+
+    margin: 0 0 35px;
+
+    padding: 20px;
+
+    background: rgba(104, 117, 106, 0.08);
+    border-left: 2px solid #68756a;
+
+    color: #68756a;
+
+    font-family: "DM Serif Display", serif;
+    font-size: 1.1rem;
+    font-style: italic;
+
+    animation: appear 0.4s ease;
+}
+
+.hidden-thought.visible {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   ATMOSPHERE
+========================= */
+
+.scene-one {
+    background: #f1f0ea;
+}
+
+.scene-two {
+    background: #eeeee7;
+}
+
+.scene-three {
+    background: #e9eae3;
+}
+
+.scene-four {
+    background: #e2e5dd;
+}
+
+.scene-five {
+    background: #d9ddd4;
+}
+
+
+/* =========================
+   ENDING
+========================= */
+
+.ending {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 30px;
+
+    background: #171817;
+    color: #f1f0ea;
+}
+
+.ending .scene-number {
+    color: #a6a7a1;
+}
+
+.ending h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 400;
+
+    margin-bottom: 50px;
+}
+
+.ending p {
+    margin-bottom: 20px;
+}
+
+.final-thought {
+    color: #a6a7a1;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.restart-button {
+    margin-top: 40px;
+
+    padding: 12px 25px;
+
+    background: transparent;
+    border: 1px solid #a6a7a1;
+
+    color: #f1f0ea;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+
+    cursor: pointer;
+}
+
+.restart-button:hover {
+    background: #f1f0ea;
+    color: #171817;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .scene {
+        padding: 80px 25px;
+    }
+
+    .story-content {
+        max-width: 100%;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .spoken,
+    .voice {
+        font-size: 1.05rem;
+    }
+
+    .thought {
+        font-size: 1.2rem;
+    }
+
+    .scene-number {
+        margin-bottom: 35px;
+    }
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
